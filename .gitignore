@@ -76,7 +76,6 @@ coverage.xml
 .ipynb_checkpoints/
 
 # exclude data and trained models from source control by default
-/data/
 /models/
 
 # Mac OS-specific storage files
@@ -88,3 +87,4 @@ coverage.xml
 
 # Mypy cache
 .mypy_cache/
+/models
