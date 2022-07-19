@@ -19,7 +19,7 @@ virtualenv:
 
 ## Install Python Dependencies.
 ## Make sure you activate the virtualenv first!
-requirements: 
+requirements:
 	$(PYTHON_INTERPRETER) -m pip install -U pip setuptools wheel
 	$(PYTHON_INTERPRETER) -m pip install -r requirements.txt
 
@@ -31,6 +31,9 @@ dirs:
 clean:
 	find . -type f -name "*.py[co]" -delete
 	find . -type d -name "__pycache__" -delete
+## To use the pre-commit hooks
+precommit:
+	pre-commit run <hook-id>
 
 ## Lint using flake8
 lint:
@@ -46,7 +49,7 @@ pull:
 
 ## Reproduce the DVC pipeline - recompute any modified outputs such as processed data or trained models
 reproduce:
-	dvc repro 
+	dvc repro
 
 #################################################################################
 # PROJECT RULES                                                                 #
@@ -58,7 +61,7 @@ reproduce:
 # Self Documenting Commands                                                     #
 #################################################################################
 
-.DEFAULT_GOAL := help
+.DEFAULT_GOAL := reproduce
 
 # Inspired by <http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html>
 # sed script explained:

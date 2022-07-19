@@ -75,8 +75,7 @@ coverage.xml
 # Jupyter NB Checkpoints
 .ipynb_checkpoints/
 
-# exclude data and trained models from source control by default
-
+# exclude data and trained models from source control by defau/models/
 
 # Mac OS-specific storage files
 .DS_Store
