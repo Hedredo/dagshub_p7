@@ -1,6 +1,6 @@
 stages:
   train:
-    cmd: python src/models/train_model.py
+    cmd: python3 -m src.models.train_model
     deps:
     - data/processed
     - src/models/train_model.py
@@ -11,7 +11,7 @@ stages:
     - reports/training_metrics.txt:
         cache: false
   eval:
-    cmd: python src/models/predict_model.py
+    cmd: python3 -m src.models.predict_model
     deps:
     - data/processed
     - models
@@ -20,7 +20,7 @@ stages:
     - reports/metrics.txt:
         cache: false
   process_data:
-    cmd: python src/data/make_dataset.py
+    cmd: python3 -m src.data.make_dataset
     deps:
     - data/raw
     - src/data/make_dataset.py
