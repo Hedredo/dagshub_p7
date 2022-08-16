@@ -35,6 +35,9 @@ clean:
 precommit:
 	pre-commit run <hook-id>
 
+datacheck:
+	python datacheck.py ${DATA}
+
 ## Lint using flake8
 lint:
 	flake8 src

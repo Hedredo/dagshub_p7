@@ -15,6 +15,7 @@ Instructions
 1. Edit the code files to your heart's desire.
 1. Process your data, train and evaluate your model using `dvc repro` or `make reproduce`
 1. To run the pre-commit hooks, run `make precommit`
+1. For running the data checks, run `make datacheck DATA='path to your data file'`
 1. When you're happy with the result, commit files (including .dvc files) to git.
 
 Project Organization
