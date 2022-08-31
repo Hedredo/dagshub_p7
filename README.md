@@ -26,21 +26,14 @@ Project Organization
     ├── README.md          <- The top-level README for developers using this project.
     ├── data
     │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
+    │   └── raw            <- The original, immutable data dump
     │
-    ├── eval.dvc           <- The end of the data pipeline - evaluates the trained model on the test dataset.
-    │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
+    ├── model             <- Trained and serialized models, model predictions, or model summaries
     │
     ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
     │                         the creator's initials, and a short `-` delimited description, e.g.
     │                         `1.0-jqp-initial-data-exploration`.
-    │
-    ├── process_data.dvc   <- Process the raw data and prepare it for training.
-    ├── raw_data.dvc       <- Keeps the raw data versioned.
-    │
     ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-    │
     ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
     │   └── figures        <- Generated graphics and figures to be used in reporting
     │   └── metrics.txt    <- Relevant metrics after evaluating the model.
@@ -62,10 +55,12 @@ Project Organization
     │   │   └── train_model.py
     │   │
     │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
-    │
+    │       └── visualize.py│
+    │   └── datacheck.py  <- Script to run data integrity checks
+    ├── .pre-commit-config.yaml  <- pre-commit hooks file with selected hooks for the projects.
     ├── tox.ini            <- tox file with settings for running tox; see tox.testrun.org
-    └── train.dvc          <- Traing a model on the processed data.
+    ├── dvc.lock            <- constructs the ML pipeline with defined stages.
+    └── dvc.yaml          <- Traing a model on the processed data.
 
 
 --------
