@@ -7,17 +7,18 @@ having MLOps best practices applied.
 Instructions
 ------------
 1. Clone the repo.
-1. Run `make dirs` to create the missing parts of the directory structure described below.
-1. *Optional:* Run `make virtualenv` to create a python virtual environment. Skip if using conda or some other env manager.
+2. Run `make dirs` to create the missing parts of the directory structure described below.
+3. *Optional:* Run `make virtualenv` to create a python virtual environment. Skip if using conda or some other env manager.
     1. Run `source env/bin/activate` to activate the virtualenv.
-1. Run `make requirements` to install required python packages.
-1. Put the raw data in `data/raw`.
-1. To save the raw data to the DVC cache, run `dvc add data/raw`
-1. Edit the code files to your heart's desire.
-1. Process your data, train and evaluate your model using `dvc repro` or `make reproduce`
-1. To run the pre-commit hooks, run `make precommit`
-1. For running the data checks, run `make datacheck file_path='path to your data file' data_label= 'label'`
-1. When you're happy with the result, commit files (including .dvc files) to git.
+4. Run `make requirements` to install required python packages.
+5. Put the raw data in `data/raw`.
+6. To save the raw data to the DVC cache, run `dvc add data/raw`
+7. Edit the code files to your heart's desire.
+8. Process your data, train and evaluate your model using `dvc repro` or `make reproduce`
+9. To run the pre-commit hooks, run `make pre-commit-install`
+10. For setting up data validation tests, run `make setup-setup-data-validation`
+11. For **running** the data validation tests, run `make run-data-validation`
+12. When you're happy with the result, commit files (including .dvc files) to git.
 
 Project Organization
 ------------
@@ -48,16 +49,18 @@ Project Organization
     │   ├── __init__.py    <- Makes src a Python module
     │   │
     │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
+    │   │   ├── great_expectations  <- Folder containing data integrity check files
+    │   │   ├── make_dataset.py
+    │   │   └── data_validation.py  <- Script to run data integrity checks
     │   │
     │   ├── models         <- Scripts to train models and then use trained models to make
     │   │   │                 predictions
     │   │   ├── predict_model.py
     │   │   └── train_model.py
     │   │
-    │   ├── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │   │   └── visualize.py│
-    │   └── datacheck.py  <- Script to run data integrity checks
+    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
+    │       └── visualize.py
+    │
     ├── .pre-commit-config.yaml  <- pre-commit hooks file with selected hooks for the projects.
     ├── tox.ini            <- tox file with settings for running tox; see tox.testrun.org
     ├── dvc.lock            <- constructs the ML pipeline with defined stages.

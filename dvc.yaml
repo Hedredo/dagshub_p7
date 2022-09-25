@@ -5,7 +5,7 @@ stages:
     - data/processed
     - src/models/train_model.py
     outs:
-    - model:
+    - models:
         persist: true
     metrics:
     - reports/training_metrics.csv:
@@ -14,7 +14,7 @@ stages:
     cmd: python -m src.models.predict_model
     deps:
     - data/processed
-    - model
+    - models
     - src/models/predict_model.py
     metrics:
     - reports/metrics.csv:
