@@ -1,7 +1,8 @@
-Cookiecutter-DVC
+Cookiecutter-MLOps
 ==============================
 
-An example of the Cookiecutter DVC project template.
+A cookiecutter template employing MLOps best practices, so you can focus on building machine learning products while
+having MLOps best practices applied.
 
 Instructions
 ------------

@@ -41,7 +41,7 @@ setup-data-validation:
 	cd src/data; great_expectations -y init; great_expectations datasource new
 
 run-data-validation:
-	python src/data/data_validation.py ${DATA}
+	cd src/data; python data_validation.py
 
 ## Lint using flake8
 lint:
@@ -49,11 +49,11 @@ lint:
 
 ## Upload Data to default DVC remote
 push:
-	dvc push
+	dvc push -r origin
 
 ## Download Data from default DVC remote
 pull:
-	dvc pull
+	dvc pull -r origin
 
 ## Reproduce the DVC pipeline - recompute any modified outputs such as processed data or trained models
 reproduce:
