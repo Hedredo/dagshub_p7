@@ -1,7 +1,7 @@
 schema: '2.0'
 stages:
   process_data:
-    cmd: python src/data/make_dataset.py
+    cmd: python -m src.data.make_dataset
     deps:
     - path: data/raw
       md5: d751713988987e9331980363e24189ce.dir

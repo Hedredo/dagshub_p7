@@ -15,11 +15,11 @@ def datacheck(file_path, labels):
 
 
 # Instantiate the parser
-parser = argparse.ArgumentParser(description='Data Checks using DeepCheck')
-parser.add_argument('--file_path', type=str,
-                    help='Path to your CSV file containing the data')
-parser.add_argument('--data_label', type=str, default='label',
-                    help='label')                    
+parser = argparse.ArgumentParser(description="Data Checks using DeepCheck")
+parser.add_argument(
+    "--file_path", type=str, help="Path to your CSV file containing the data"
+)
+parser.add_argument("--data_label", type=str, default="label", help="label")
 
 args = parser.parse_args()
 data = args.file_path

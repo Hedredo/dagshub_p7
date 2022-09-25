@@ -33,7 +33,7 @@ clean:
 	find . -type d -name "__pycache__" -delete
 ## To use the pre-commit hooks
 precommit:
-	pre-commit run <hook-id>
+	pre-commit run --all-files
 
 datacheck:
 	python datacheck.py ${DATA}
