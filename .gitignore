@@ -75,8 +75,9 @@ coverage.xml
 # Jupyter NB Checkpoints
 .ipynb_checkpoints/
 
-# exclude data and trained models from source control by default
-
+# exclude data, trained models, and related utils from source control by default
+/models
+/src/data/great_expectations
 
 # Mac OS-specific storage files
 .DS_Store
@@ -87,4 +88,3 @@ coverage.xml
 
 # Mypy cache
 .mypy_cache/
-/models

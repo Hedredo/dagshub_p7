@@ -1,13 +1,4 @@
-# local package
--e .
-
 # external requirements
-awscli==1.25.31
-dvc==2.13.0
-flake8==4.0.1
+dvc==2.26.2
 pre-commit==2.20.0
-tqdm==4.64.0
-virtualenv==20.15.1
-deepchecks --upgrade
-deepchecks
-deepchecks[tabular]
+great_expectations==0.15.23

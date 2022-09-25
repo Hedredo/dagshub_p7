@@ -5,7 +5,7 @@
 #################################################################################
 
 PROJECT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
-PYTHON_INTERPRETER = python
+PYTHON_INTERPRETER = python3
 
 #################################################################################
 # COMMANDS                                                                      #
@@ -15,7 +15,8 @@ PYTHON_INTERPRETER = python
 ## Activate with the command:
 ## source env/bin/activate
 virtualenv:
-	virtualenv -p $(PYTHON_INTERPRETER) env
+	$(PYTHON_INTERPRETER) -m venv env
+	$(info "Activate with the command 'source env/bin/activate'")
 
 ## Install Python Dependencies.
 ## Make sure you activate the virtualenv first!
@@ -31,12 +32,16 @@ dirs:
 clean:
 	find . -type f -name "*.py[co]" -delete
 	find . -type d -name "__pycache__" -delete
-## To use the pre-commit hooks
-precommit:
-	pre-commit run --all-files
 
-datacheck:
-	python datacheck.py ${DATA}
+## To use the pre-commit hooks
+pre-commit-install:
+	pre-commit install
+
+setup-data-validation:
+	cd src/data; great_expectations -y init; great_expectations datasource new
+
+run-data-validation:
+	python src/data/data_validation.py ${DATA}
 
 ## Lint using flake8
 lint:
