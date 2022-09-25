@@ -26,7 +26,7 @@ requirements:
 
 ## Create directories that are ignored by git but required for the project
 dirs:
-	mkdir -p data/raw data/processed model
+	mkdir -p data/raw data/processed models
 
 ## Delete all compiled Python files
 clean:
