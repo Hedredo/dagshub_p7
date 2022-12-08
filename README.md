@@ -62,9 +62,8 @@ Project Organization
     │       └── visualize.py
     │
     ├── .pre-commit-config.yaml  <- pre-commit hooks file with selected hooks for the projects.
-    ├── tox.ini            <- tox file with settings for running tox; see tox.testrun.org
-    ├── dvc.lock            <- constructs the ML pipeline with defined stages.
-    └── dvc.yaml          <- Traing a model on the processed data.
+    ├── dvc.lock           <- constructs the ML pipeline with defined stages.
+    └── dvc.yaml           <- Traing a model on the processed data.
 
 
 --------
