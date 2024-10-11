@@ -6,13 +6,13 @@ having MLOps best practices applied.
 
 Instructions
 ------------
-1. Clone the repo.
-2. Run `make dirs` to create the missing parts of the directory structure described below.
+***1. Clone the repo.***
+***2. Run `make dirs` to create the missing parts of the directory structure described below.***
 3. *Optional:* Run `make virtualenv` to create a python virtual environment. Skip if using conda or some other env manager.
     1. Run `source env/bin/activate` to activate the virtualenv.
-4. Run `make requirements` to install required python packages.
-5. Put the raw data in `data/raw`.
-6. To save the raw data to the DVC cache, run `dvc add data/raw`
+***4. Run `make requirements` to install required python packages.***
+***5. Put the raw data in `data/raw`.***
+***6. To save the raw data to the DVC cache, run `dvc add data/raw`***
 7. Edit the code files to your heart's desire.
 8. Process your data, train and evaluate your model using `dvc repro` or `make reproduce`
 9. To run the pre-commit hooks, run `make pre-commit-install`
