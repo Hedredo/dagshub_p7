@@ -58,6 +58,8 @@ coverage.xml
 
 # DotEnv configuration
 .env
+.venv
+.conda
 
 # Database
 *.db
