@@ -2,4 +2,3 @@
 data/raw/*emoticon.csv filter=lfs diff=lfs merge=lfs -text
 data/raw/*.csv filter=lfs diff=lfs merge=lfs -text
 *.csv filter=lfs diff=lfs merge=lfs -text
-*.parquet filter=lfs diff=lfs merge=lfs -text
