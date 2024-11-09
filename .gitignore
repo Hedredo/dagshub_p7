@@ -92,3 +92,7 @@ coverage.xml
 
 # Weights
 weights/
+
+# Mlflow
+mlruns/
+mlartifacts/
